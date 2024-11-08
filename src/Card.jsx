@@ -1,11 +1,20 @@
 //Este componente deberia recibir por props y mostrar en pantalla la informacion
 //que envia el usuario
 
-function Card() {
+function Card({petList}) {
   return (
     <div>
-      <h2>Esto es un componente</h2>
-    </div>
+    <h3>Lista de mascotas</h3>
+    <ul>
+      {petList.map((element) => (
+        <li key={element.id}>
+          <span>
+            {element.name} {element.type}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
   );
 }
 
